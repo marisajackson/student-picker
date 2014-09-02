@@ -1,0 +1,6 @@
+%ul#students
+  = render partial: 'shared/student', collection: @students
+
+= simple_form_for Student.new do |f|
+  = f.input :name
+  = f.submit "Add Student"

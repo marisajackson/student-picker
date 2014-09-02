@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title StudentPicker
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    - if notice.present?
+      .alert-box.success{ "data-alert" => "" }
+        = notice
+        %a.close{ href: "#" } &times;
+    - if alert.present?
+      .alert-box.alert{ "data-alert" => "" }
+        = alert
+        %a.close{ href: "#" } &times;
+    %h1 StudentPicker
+    = yield
