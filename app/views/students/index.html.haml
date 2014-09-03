@@ -1,5 +1,10 @@
+= button_to "Pick Student", students_chosen_path, :method => :get
+
+- if @chosen_one
+  %h1= @chosen_one.name
+
 %ul#students
-  = render partial: 'shared/student', collection: @students
+  = render partial: 'student', collection: @students
 
 = simple_form_for Student.new do |f|
   = f.input :name

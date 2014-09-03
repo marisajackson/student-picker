@@ -1,6 +1,7 @@
 StudentPicker::Application.routes.draw do
   root 'students#index'
   resources :students, only: [:index, :new, :create]
+  get 'students/chosen' => 'students#chosen'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

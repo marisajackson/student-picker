@@ -1,4 +1,13 @@
 class StudentsController < ApplicationController
+  def chosen
+    @chosen_one = Student.pick_student
+    if @chosen_one
+      render :index
+    else
+      redirect_to students_path, notice: "There are currently no students."
+    end
+  end
+
   def create
     @student = Student.new(student_params)
     if @student.save
